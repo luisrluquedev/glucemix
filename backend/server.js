@@ -17,7 +17,7 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.static('static'));
 server.use(cors());
 
-server.use("/api", apiRouter);
+server.use('/api', apiRouter);
 
 // Port
 
