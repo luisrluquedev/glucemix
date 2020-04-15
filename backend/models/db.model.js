@@ -11,26 +11,29 @@ class dataBase {
         return new Promise((resolve, reject) => {
             this.connection.query(sql, (error, result) => {
                 if (error) {
-                    console.log(error);
-                    return reject(error);
+                    console.log(error)
+                    return reject(error)
                 } else {
-                    resolve(result);
+                    resolve(result)
+                }
+            })
+        })
+    }
+    close() {
+        return new Promise((resolve, reject) => {
+            this.connection.end((error) => {
+                if (error) {
+                    reject(error)
+                } else {
+                    resolve()
                 }
             })
         })
     }
 }
-close() {
-    return new Promise((resolve, reject) => {
-        this.connection.end(error) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve();
-            }
-        }
-    })
-}
+
+
+
 
 const connection = new dataBase(mysql_config);
 module.exports = connection;

@@ -1,1 +1,1 @@
-const usersModel = require("../models/usersModel");
+const userModel = require("../models/usersModel");
